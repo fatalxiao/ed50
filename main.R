@@ -24,14 +24,14 @@ print(pavaData)
 
 bootResult <- boot(data = groupS,
               statistic = bootIsotonicRegression,
-                      R = 10,
-                    sim = 'parametric',
+                      R = 2000,
+                    sim = "parametric",
                 ran.gen = bootIsotonicResample,
                     mle = list(baselinePava = pavaData,
-              firstDose = 2.5,
-      PROBABILITY.GAMMA = 0.5),
+                                  firstDose = 7,
+                          PROBABILITY.GAMMA = 0.9),
            baselinePava = pavaData,
-      PROBABILITY.GAMMA = 0.5)
+      PROBABILITY.GAMMA = 0.9)
 print(bootResult)
 
 result = bootBC.ci(tObserved = bootResult$t0[3],
