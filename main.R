@@ -12,7 +12,6 @@ library(boot)
 # doseSequence <- c(2.5,2.7,2.9,3.1,3.3,3.1,3.3,3.5,3.3,3.5,3.7,3.5,3.3,3.5,3.7,3.9,3.7,3.5,3.7,3.9,3.7,3.9,3.7,3.5,3.7,3.9,3.7,3.9,3.7,3.5,3.7,3.9,3.7,3.5,3.3,3.5)
 # 对应剂量的反应
 # responseSequence <- c(0,0,0,0,1,0,0,1,0,0,1,1,0,0,0,1,1,0,0,1,0,1,1,0,0,1,0,1,1,0,0,1,1,1,0,0)
-
 # 创建一个数据框
 # groupS <- data.frame(doseSequence = doseSequence, responseSequence = responseSequence)
 
@@ -35,7 +34,7 @@ bootResult <- boot(data = groupS,
       PROBABILITY.GAMMA = 0.5)
 print(bootResult)
 
-result=bootBC.ci(tObserved = bootResult$t0[3],
-               tBoot = bootResult$t[, 3],
-                conf = 0.95)
+result = bootBC.ci(tObserved = bootResult$t0[3],
+                       tBoot = bootResult$t[, 3],
+                        conf = 0.95)
 print(result)
